@@ -4,3 +4,6 @@ data/
 warehouse.duckdb
 target/
 dbt_packages/
+logs/
+*.log
+.DS_Store
