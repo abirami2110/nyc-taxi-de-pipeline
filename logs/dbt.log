@@ -1,0 +1,64 @@
+[0m15:54:38.573244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109802840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109268530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109269370>]}
+
+
+============================== 15:54:38.576355 | b7ebdcb5-9800-49bd-befb-a33ace8ddc3e ==============================
+[0m15:54:38.576355 [info ] [MainThread]: Running with dbt=1.11.6
+[0m15:54:38.576582 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'warn_error': 'None', 'use_colors': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init nyc_taxi_dbt', 'empty': 'None', 'log_path': 'logs', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'static_parser': 'True', 'quiet': 'False', 'profiles_dir': '/Users/abirram/.dbt', 'introspect': 'True', 'no_print': 'None', 'fail_fast': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'version_check': 'True', 'printer_width': '80', 'partial_parse': 'True'}
+[0m15:54:38.595160 [info ] [MainThread]: Creating dbt configuration folder at /Users/abirram/.dbt
+[0m15:54:38.596632 [debug] [MainThread]: Starter project path: /Users/abirram/nyc-taxi-de-pipeline/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m15:54:38.611275 [info ] [MainThread]: 
+Your new dbt project "nyc_taxi_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:54:38.611457 [info ] [MainThread]: Setting up your profile.
+[0m15:55:14.769604 [error] [MainThread]: Encountered an error:
+list index out of range
+[0m15:55:14.776403 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/abirram/nyc-taxi-de-pipeline/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abirram/nyc-taxi-de-pipeline/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abirram/nyc-taxi-de-pipeline/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/abirram/nyc-taxi-de-pipeline/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/Users/abirram/nyc-taxi-de-pipeline/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 261, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abirram/nyc-taxi-de-pipeline/.venv/lib/python3.12/site-packages/dbt/task/init.py", line 243, in ask_for_adapter_choice
+    return available_adapters[numeric_choice - 1]
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+IndexError: list index out of range
+
+[0m15:55:14.777543 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 36.249165, "process_in_blocks": "0", "process_kernel_time": 0.208554, "process_mem_max_rss": "109608960", "process_out_blocks": "0", "process_user_time": 0.717974}
+[0m15:55:14.778138 [debug] [MainThread]: Command `dbt init` failed at 15:55:14.778032 after 36.25 seconds
+[0m15:55:14.778804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f1c860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a0081a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076a9100>]}
+[0m15:55:14.779213 [debug] [MainThread]: Flushing usage events
+[0m15:55:15.438803 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:55:33.028592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0c55b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd5d4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd5d430>]}
+
+
+============================== 15:55:33.031079 | f4fd83ef-f374-4dcf-bf51-b0c9bd454e38 ==============================
+[0m15:55:33.031079 [info ] [MainThread]: Running with dbt=1.11.6
+[0m15:55:33.031346 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'write_json': 'True', 'warn_error': 'None', 'profiles_dir': '/Users/abirram/.dbt', 'no_print': 'None', 'static_parser': 'True', 'log_format': 'default', 'printer_width': '80', 'empty': 'None', 'version_check': 'True', 'use_colors': 'True', 'invocation_command': 'dbt init nyc_taxi_dbt', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'quiet': 'False', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'debug': 'False', 'use_experimental_parser': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m15:55:33.042542 [info ] [MainThread]: A project called nyc_taxi_dbt already exists here.
+[0m15:55:33.042903 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.05212696, "process_in_blocks": "0", "process_kernel_time": 0.134872, "process_mem_max_rss": "108445696", "process_out_blocks": "0", "process_user_time": 0.477285}
+[0m15:55:33.043122 [debug] [MainThread]: Command `dbt init` succeeded at 15:55:33.043079 after 0.05 seconds
+[0m15:55:33.043263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10da0c8c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0c55b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d90ff50>]}
+[0m15:55:33.043391 [debug] [MainThread]: Flushing usage events
+[0m15:55:33.632613 [debug] [MainThread]: An error was encountered while trying to flush usage events
