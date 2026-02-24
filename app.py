@@ -6,20 +6,20 @@ st.title("NYC Taxi — Mini Data Warehouse Demo")
 
 con = duckdb.connect("warehouse.duckdb")
 
+# Metric from raw (optional)
 total = con.execute("select count(*) as trips from raw.yellow_trips").df()
 st.metric("Total trips (raw)", int(total["trips"][0]))
 
+# Query dbt mart
 df = con.execute("""
-select
-  date_trunc('day', tpep_pickup_datetime) as day,
-  count(*) as trips,
-  avg(trip_distance) as avg_distance
-from raw.yellow_trips
-group by 1
-order by 1
+select * 
+from analytics.fact_daily_trips
+order by trip_date
 """).df()
 
-st.line_chart(df.set_index("day")[["trips"]])
-st.line_chart(df.set_index("day")[["avg_distance"]])
+# Charts
+st.line_chart(df.set_index("trip_date")[["trips"]])
+st.line_chart(df.set_index("trip_date")[["avg_distance"]])
+st.line_chart(df.set_index("trip_date")[["total_revenue"]])
 
 st.dataframe(df.tail(20))
