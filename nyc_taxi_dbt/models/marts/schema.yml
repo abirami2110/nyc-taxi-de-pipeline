@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fact_daily_trips
+    description: "Daily aggregated NYC taxi trips"
+    columns:
+      - name: trip_date
+        tests:
+          - not_null
+          - unique
+
+      - name: trips
+        tests:
+          - not_null
+
+      - name: avg_distance
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null

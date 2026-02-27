@@ -1,9 +1,8 @@
 version: 2
 
-models:
-  - name: stg_yellow_trips
-    columns:
-      - name: pickup_ts
-        tests: [not_null]
-      - name: trip_distance
-        tests: [not_null]
+sources:
+  - name: raw
+    database: warehouse
+    schema: raw
+    tables:
+      - name: yellow_trips
